@@ -794,6 +794,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 7847487835832580580, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
   m_PrefabInstance: {fileID: 7909000111422662852}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &4528149715518094 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7854279308062184760, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+  m_PrefabInstance: {fileID: 7909000111422662852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4536681383466198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7913519045453642770, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
@@ -1169,6 +1174,10 @@ PrefabInstance:
       value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_rigidbody
+      value: 
+      objectReference: {fileID: 4528149715518094}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
       propertyPath: pidController
       value: 
       objectReference: {fileID: 0}
@@ -1205,6 +1214,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1714475755}
     - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_visual.roll.key
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
       propertyPath: m_visual.transform
       value: 
       objectReference: {fileID: 1930729352}
@@ -1225,12 +1238,24 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_rotation.yaw.smooth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_rotation.yaw.leftKey
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
       propertyPath: m_visual.tilt.yawAngle
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
       propertyPath: m_rotation.yaw.maxSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_rotation.yaw.rightKey
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
       propertyPath: m_visual.tilt.transform
@@ -1239,6 +1264,34 @@ PrefabInstance:
     - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
       propertyPath: m_visual.hover.isEnabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_position.lateral.smooth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_position.vertical.upKey
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_position.lateral.leftKey
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_position.vertical.smooth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_visual.tilt.lateralAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_position.lateral.rightKey
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_position.vertical.downKey
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
       propertyPath: m_visual.tilt.rightLeftAngle
@@ -1257,7 +1310,15 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_position.longitudinal.smooth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
       propertyPath: m_rotationMovement.tilt.smooth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909000111504933839, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
+      propertyPath: m_visual.tilt.longitudinalAngle
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7910054424299398568, guid: 62cbd42f8b5e86a41ac8c790182a8b65, type: 3}
