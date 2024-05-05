@@ -20,25 +20,29 @@ namespace SimpleDroneController
             [System.Serializable]
             public class Lateral
             {
-                public KeyCode leftKey = KeyCode.Q;
-                public KeyCode rightKey = KeyCode.E;
+                public KeyCode leftKey = KeyCode.A;
+                public KeyCode rightKey = KeyCode.D;
                 public float input = 0.0f;
-                public float smooth = 1.0f;
+                public float smooth = 4.0f;
             }
 
             [System.Serializable]
             public class Vertical
             {
-                public KeyCode upKey = KeyCode.Space;
-                public KeyCode downKey = KeyCode.Z;
+                public KeyCode upKey = KeyCode.I;
+                public KeyCode downKey = KeyCode.K;
                 public float input = 0.0f;
-                public float smooth = 1.0f;
+                public float smooth = 4.0f;
             }
 
+            public KeyCode AfterburnerKey = KeyCode.Tab; // кнопка форсажа
+
             public float speed = 100.0f;
+            public float AfterburnerSpeed; // скорость с форсажем
             public Longitudinal longitudinal;
             public Lateral lateral;
             public Vertical vertical;
+            [HideInInspector] public bool abEffect = false;
         }
 
 
@@ -48,11 +52,11 @@ namespace SimpleDroneController
             [System.Serializable]
             public class Yaw
             {
-                public KeyCode leftKey = KeyCode.A;
-                public KeyCode rightKey = KeyCode.D;
+                public KeyCode leftKey = KeyCode.J;
+                public KeyCode rightKey = KeyCode.L;
                 public float input = 0.0f;
                 public float maxSpeed = 2.0f;
-                public float smooth = 1.0f;
+                public float smooth = 4.0f;
             }
 
             public Yaw yaw;
@@ -70,9 +74,9 @@ namespace SimpleDroneController
             [System.Serializable]
             public class Tilt
             {
-                public float lateralAngle = 10.0f;
-                public float longitudinalAngle = 10.0f;
-                public float yawAngle = 10.0f;
+                public float lateralAngle = 25.0f;
+                public float longitudinalAngle = 30.0f;
+                public float yawAngle = 20.0f;
                 public float verticalAngle = 5.0f;
                 public float smooth = 7.0f;
             }
@@ -82,7 +86,7 @@ namespace SimpleDroneController
             {
                 public bool isEnabled = true;
                 public bool isRolling = false;
-                public KeyCode key = KeyCode.R;
+                public KeyCode key = KeyCode.Space;
                 public float coolDownSeconds = 1.0f;
             }
 
@@ -110,10 +114,24 @@ namespace SimpleDroneController
             public AudioSource engine;
         }
 
+        [System.Serializable]
+        public class Effects
+        {
+            public ParticleSystem mainEngineFlame;
+            public ParticleSystem leftManeuveringEngineFlame;
+            public ParticleSystem rightManeuveringEngineFlame;
+            public ParticleSystem leftLateralEngineFlame;
+            public ParticleSystem rightLateralEngineFlame;
+            public ParticleSystem bottomAltitudeEngineFlame;
+            public ParticleSystem topAltitudeEngineFlame;
+            public ParticleSystem reverseEngineFlame;
+        }
+
         [SerializeField] bool isOn = true;
         public PositionMovement m_position;
         public RotationMovement m_rotation;
         public Visual m_visual;
+        public Effects m_effects;
         public Rigidbody m_rigidbody;
         public Sound m_sound;
 
@@ -123,12 +141,14 @@ namespace SimpleDroneController
             {
                 Debug.LogWarning("Rigidbody component not found on the GameObject.");
             }
+            m_position.AfterburnerSpeed = m_position.speed + (m_position.speed * 0.2f);
         }
 
 
         private void Update()
         {
             UpdateInput();
+            ActivateEffects();
             UpdateSound();
         }
 
@@ -156,6 +176,9 @@ namespace SimpleDroneController
                 m_rotation.yaw.input = 0.0f;
                 return;
             }
+
+            if (Input.GetKey(m_position.AfterburnerKey)) m_position.abEffect = true;
+            else m_position.abEffect = false;
 
             //LATERAL LEFT RIGHT
             m_position.lateral.input = GetInputAxis(m_position.lateral.input, m_position.lateral.smooth, m_position.lateral.rightKey, m_position.lateral.leftKey);
@@ -202,7 +225,8 @@ namespace SimpleDroneController
             Vector3 localDirection = transform.TransformDirection(new Vector3(x, y, z));
 
             // Set Rigidbody velocity based on local direction
-            m_rigidbody.velocity = localDirection * m_position.speed;
+            if (!m_position.abEffect) m_rigidbody.velocity = localDirection * m_position.speed;
+            else m_rigidbody.velocity = localDirection * m_position.AfterburnerSpeed;
         }
 
         private void MoveRotation()
@@ -297,7 +321,154 @@ namespace SimpleDroneController
 
             m_sound.engine.pitch = 1 + (m_rigidbody.velocity.magnitude / 130);
         }
+
+        private void ActivateEffects()
+        {
+            if (!isOn)
+            {
+                DeactivateAllEffects();
+                return;
+            }
+
+            if (m_effects.mainEngineFlame != null)
+            {
+                m_effects.mainEngineFlame.Play();
+            }
+
+            if (m_effects.leftManeuveringEngineFlame != null)
+            {
+                if (m_position.lateral.input < 0)
+                {
+                    m_effects.leftManeuveringEngineFlame.Play();
+                }
+                else
+                {
+                    m_effects.leftManeuveringEngineFlame.Clear();
+                    m_effects.leftManeuveringEngineFlame.Pause();
+                }
+            }
+
+            if (m_effects.rightManeuveringEngineFlame != null)
+            {
+                if (m_position.lateral.input > 0)
+                {
+                    m_effects.rightManeuveringEngineFlame.Play();
+                }
+                else
+                {
+                    m_effects.rightManeuveringEngineFlame.Clear();
+                    m_effects.rightManeuveringEngineFlame.Pause();
+                }
+            }
+
+            if (m_effects.leftLateralEngineFlame != null)
+            {
+                if (m_position.longitudinal.input < 0)
+                {
+                    m_effects.leftLateralEngineFlame.Play();
+                }
+                else
+                {
+                    m_effects.leftLateralEngineFlame.Pause();
+                    m_effects.leftLateralEngineFlame.Clear();
+                }
+            }
+
+            if (m_effects.rightLateralEngineFlame != null)
+            {
+                if (m_position.longitudinal.input > 0)
+                {
+                    m_effects.rightLateralEngineFlame.Play();
+                }
+                else
+                {
+                    m_effects.rightLateralEngineFlame.Pause();
+                    m_effects.rightLateralEngineFlame.Clear();
+                }
+            }
+
+            if (m_effects.bottomAltitudeEngineFlame != null)
+            {
+                if (m_position.vertical.input < 0)
+                {
+                    m_effects.bottomAltitudeEngineFlame.Play();
+                }
+                else
+                {
+                    m_effects.bottomAltitudeEngineFlame.Pause();
+                    m_effects.bottomAltitudeEngineFlame.Clear();
+                }
+            }
+
+            if (m_effects.topAltitudeEngineFlame != null)
+            {
+                if (m_position.vertical.input > 0)
+                {
+                    m_effects.topAltitudeEngineFlame.Play();
+                }
+                else
+                {
+                    m_effects.topAltitudeEngineFlame.Pause();
+                    m_effects.topAltitudeEngineFlame.Clear();
+                }
+            }
+
+            if (m_effects.reverseEngineFlame != null)
+            {
+                if (m_position.longitudinal.input < 0)
+                {
+                    m_effects.reverseEngineFlame.Play();
+                }
+                else
+                {
+                    m_effects.reverseEngineFlame.Pause();
+                    m_effects.reverseEngineFlame.Clear();
+                }
+            }
+        }
+
+        private void DeactivateAllEffects()
+        {
+            if (m_effects.mainEngineFlame != null)
+            {
+                m_effects.mainEngineFlame.Pause();
+                m_effects.mainEngineFlame.Clear();
+            }
+            if (m_effects.leftManeuveringEngineFlame != null)
+            {
+                m_effects.leftManeuveringEngineFlame.Pause();
+                m_effects.leftManeuveringEngineFlame.Clear();
+            }
+            if (m_effects.rightManeuveringEngineFlame != null)
+            {
+                m_effects.rightManeuveringEngineFlame.Pause();
+                m_effects.rightManeuveringEngineFlame.Clear();
+            }
+            if (m_effects.leftLateralEngineFlame != null)
+            {
+                m_effects.leftLateralEngineFlame.Pause();
+                m_effects.leftLateralEngineFlame.Clear();
+            }
+            if (m_effects.rightLateralEngineFlame != null)
+            {
+                m_effects.rightLateralEngineFlame.Pause();
+                m_effects.rightLateralEngineFlame.Clear();
+            }
+            if (m_effects.bottomAltitudeEngineFlame != null)
+            {
+                m_effects.bottomAltitudeEngineFlame.Pause();
+                m_effects.bottomAltitudeEngineFlame.Clear();
+            }
+            if (m_effects.topAltitudeEngineFlame != null)
+            {
+                m_effects.topAltitudeEngineFlame.Pause();
+                m_effects.topAltitudeEngineFlame.Clear();
+            }
+            if (m_effects.reverseEngineFlame != null)
+            {
+                m_effects.reverseEngineFlame.Pause();
+                m_effects.reverseEngineFlame.Clear();
+            }
+        }
     }
 }
-
-
