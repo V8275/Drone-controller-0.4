@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 14f9ad74b16d19b479d308492b111576
+timeCreated: 1516611694
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Body
+    100002: //RootNode
+    100004: Rotor.001
+    100006: Rotor.003
+    100008: Rotor.004
+    100010: Rotor.005
+    100012: RotorRotor
+    100014: RotorRotor.001
+    100016: RotorRotor.002
+    100018: RotorRotor.003
+    400000: Body
+    400002: //RootNode
+    400004: Rotor.001
+    400006: Rotor.003
+    400008: Rotor.004
+    400010: Rotor.005
+    400012: RotorRotor
+    400014: RotorRotor.001
+    400016: RotorRotor.002
+    400018: RotorRotor.003
+    2300000: Body
+    2300002: Rotor.001
+    2300004: Rotor.003
+    2300006: Rotor.004
+    2300008: Rotor.005
+    2300010: RotorRotor
+    2300012: RotorRotor.001
+    2300014: RotorRotor.002
+    2300016: RotorRotor.003
+    3300000: Body
+    3300002: Rotor.001
+    3300004: Rotor.003
+    3300006: Rotor.004
+    3300008: Rotor.005
+    3300010: RotorRotor
+    3300012: RotorRotor.001
+    3300014: RotorRotor.002
+    3300016: RotorRotor.003
+    4300000: RotorRotor.003
+    4300002: RotorRotor.002
+    4300004: Rotor.005
+    4300006: Rotor.004
+    4300008: Rotor.003
+    4300010: Rotor.001
+    4300012: RotorRotor.001
+    4300014: RotorRotor
+    4300016: Body
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: b755b0c7071bb5547881a172989e4670, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body_01
+    second: {fileID: 2100000, guid: 8683e5d2f8f657a4c873237294e4f261, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body_02
+    second: {fileID: 2100000, guid: 81e3588d044d4624ebe01c6871da191c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body_03
+    second: {fileID: 2100000, guid: 6aaba99b0433be74fb69fc3be1aff3fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body_04
+    second: {fileID: 2100000, guid: 1f4ee53cd12305140ac5e5b4b14392ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor
+    second: {fileID: 2100000, guid: 7d3c506a308392145a010ea24d52a03c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RotorRotor
+    second: {fileID: 2100000, guid: 76099b2a917212845b561f74c0bdb14c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

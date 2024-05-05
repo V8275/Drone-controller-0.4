@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: 002b1c0d9f9f65c408a98bd3f9a62aa5
+timeCreated: 1519383751
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Obstacle_1
+    100002: Obstacle_2
+    100004: Obstacle_3
+    100006: Obstacle_4
+    100008: Obstacle_5
+    100010: Obstacle_6
+    100012: Obstacle_7
+    100014: Obstacle_8
+    100016: //RootNode
+    400000: Obstacle_1
+    400002: Obstacle_2
+    400004: Obstacle_3
+    400006: Obstacle_4
+    400008: Obstacle_5
+    400010: Obstacle_6
+    400012: Obstacle_7
+    400014: Obstacle_8
+    400016: //RootNode
+    2300000: Obstacle_1
+    2300002: Obstacle_2
+    2300004: Obstacle_3
+    2300006: Obstacle_4
+    2300008: Obstacle_5
+    2300010: Obstacle_6
+    2300012: Obstacle_7
+    2300014: Obstacle_8
+    3300000: Obstacle_1
+    3300002: Obstacle_2
+    3300004: Obstacle_3
+    3300006: Obstacle_4
+    3300008: Obstacle_5
+    3300010: Obstacle_6
+    3300012: Obstacle_7
+    3300014: Obstacle_8
+    4300000: Obstacle_5
+    4300002: Obstacle_8
+    4300004: Obstacle_4
+    4300006: Obstacle_2
+    4300008: Obstacle_3
+    4300010: Obstacle_6
+    4300012: Obstacle_7
+    4300014: Obstacle_1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_1
+    second: {fileID: 2100000, guid: 9c92edbec5e1f7e4091c150e3dd38ea7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_2_1
+    second: {fileID: 2100000, guid: 3f253c1660fd4de45a845481d42c113e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_2_2
+    second: {fileID: 2100000, guid: 2b6f0f108bec39d4cb4255871ad1c2b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_3_1
+    second: {fileID: 2100000, guid: 0d4d9c95c1b39c84ba0a91af92270139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_3_2
+    second: {fileID: 2100000, guid: 2879ea7f0ba3be142ab064a5c454fe92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_3_3
+    second: {fileID: 2100000, guid: 2f5c1a72465589249b5476b1c9168fde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_4
+    second: {fileID: 2100000, guid: 6506834aa6dfe1a4190c975dd674d747, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_5_1
+    second: {fileID: 2100000, guid: c8d5bc6e82eefab49be4320829876a86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_5_2
+    second: {fileID: 2100000, guid: 2e603b774f7000743987e60887bbf200, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_6_1
+    second: {fileID: 2100000, guid: a7c4a629261576e4eb1b3a1fbd875eef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_6_2
+    second: {fileID: 2100000, guid: 241e707237b42ad4b96843566bf0d712, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_6_3
+    second: {fileID: 2100000, guid: b11ff4542f062744daa9e0e0d873db6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_7_1
+    second: {fileID: 2100000, guid: 7541d6060d3133443b3770eb0ed40094, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_7_2
+    second: {fileID: 2100000, guid: dae592511c258104381b071b0c2e6f2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_7_3
+    second: {fileID: 2100000, guid: 6450c127c51b690468a1eede2e73595c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_7_4
+    second: {fileID: 2100000, guid: 05774c9d064d0f94bb96c637f49e6b0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obstacle_9
+    second: {fileID: 2100000, guid: af33906da199d144eba0687dac2a73a3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

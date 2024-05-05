@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: dcd557a06a21a5246b755e4fd8ba9261
+timeCreated: 1520407490
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Antenna
+    100002: Camera
+    100004: //RootNode
+    100006: Hull
+    100008: Rotor FL
+    100010: Rotor FR
+    100012: Rotor RL
+    100014: Rotor RR
+    400000: Antenna
+    400002: Camera
+    400004: //RootNode
+    400006: Hull
+    400008: Rotor FL
+    400010: Rotor FR
+    400012: Rotor RL
+    400014: Rotor RR
+    2300000: Antenna
+    2300002: Camera
+    2300004: Hull
+    2300006: Rotor FL
+    2300008: Rotor FR
+    2300010: Rotor RL
+    2300012: Rotor RR
+    3300000: Antenna
+    3300002: Camera
+    3300004: Hull
+    3300006: Rotor FL
+    3300008: Rotor FR
+    3300010: Rotor RL
+    3300012: Rotor RR
+    4300000: Rotor FL
+    4300002: Camera
+    4300004: Rotor RL
+    4300006: Hull
+    4300008: Rotor FR
+    4300010: Rotor RR
+    4300012: Antenna
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Antenna
+    second: {fileID: 2100000, guid: d1fbe930e2bd0b147ad4825f9dbfbb69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: cb62a6189366f4c4f8921913f9421676, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Camera
+    second: {fileID: 2100000, guid: add909ab3ac783444a1f37c5be114139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotors
+    second: {fileID: 2100000, guid: d8833ee86c72684448e9f61002ec11d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dodo
+    second: {fileID: 2100000, guid: 7a0a91e03396c4f439f3c1e7d3f50ddb, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

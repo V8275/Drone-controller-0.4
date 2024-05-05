@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b77bc374b386c7a46a6a22148ad56489
+timeCreated: 1519048374
+licenseType: Store
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Saved By Zero
+  fontNames:
+  - Saved By Zero
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
