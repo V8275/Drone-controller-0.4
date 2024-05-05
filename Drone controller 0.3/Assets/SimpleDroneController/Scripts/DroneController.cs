@@ -178,7 +178,7 @@ namespace SimpleDroneController
                 return;
             }
 
-            if (Input.GetKey(m_position.AfterburnerKey))
+            if (Input.GetKey(m_position.AfterburnerKey) && m_position.longitudinal.input > 0)
             {
                 m_position.abEffect = true;
                 m_effects.AfterburnerFlame.Play();
@@ -342,7 +342,7 @@ namespace SimpleDroneController
 
             if (m_effects.leftManeuveringEngineFlame != null)
             {
-                if (m_position.lateral.input < 0)
+                if (m_rotation.yaw.input < 0)
                 {
                     m_effects.leftManeuveringEngineFlame.Play();
                 }
@@ -355,7 +355,7 @@ namespace SimpleDroneController
 
             if (m_effects.rightManeuveringEngineFlame != null)
             {
-                if (m_position.lateral.input > 0)
+                if (m_rotation.yaw.input > 0)
                 {
                     m_effects.rightManeuveringEngineFlame.Play();
                 }
@@ -368,7 +368,7 @@ namespace SimpleDroneController
 
             if (m_effects.leftLateralEngineFlame != null)
             {
-                if (m_position.longitudinal.input < 0)
+                if (m_position.lateral.input < 0)
                 {
                     m_effects.leftLateralEngineFlame.Play();
                 }
@@ -381,7 +381,7 @@ namespace SimpleDroneController
 
             if (m_effects.rightLateralEngineFlame != null)
             {
-                if (m_position.longitudinal.input > 0)
+                if (m_position.lateral.input > 0)
                 {
                     m_effects.rightLateralEngineFlame.Play();
                 }
@@ -418,7 +418,7 @@ namespace SimpleDroneController
                 }
             }
 
-            if (m_effects.reverseEngineFlame != null)
+            if (m_effects.reverseEngineFlame != null && m_effects.mainEngineFlame != null)
             {
                 if (m_position.longitudinal.input < 0)
                 {
@@ -432,7 +432,7 @@ namespace SimpleDroneController
                     m_effects.reverseEngineFlame.Pause();
                     m_effects.reverseEngineFlame.Clear();
                 }
-                else
+                else if(m_position.longitudinal.input == 0)
                 {
                     m_effects.mainEngineFlame.Pause();
                     m_effects.mainEngineFlame.Clear();
