@@ -125,6 +125,7 @@ namespace SimpleDroneController
             public ParticleSystem bottomAltitudeEngineFlame;
             public ParticleSystem topAltitudeEngineFlame;
             public ParticleSystem reverseEngineFlame;
+            public ParticleSystem AfterburnerFlame;
         }
 
         [SerializeField] bool isOn = true;
@@ -177,8 +178,17 @@ namespace SimpleDroneController
                 return;
             }
 
-            if (Input.GetKey(m_position.AfterburnerKey)) m_position.abEffect = true;
-            else m_position.abEffect = false;
+            if (Input.GetKey(m_position.AfterburnerKey))
+            {
+                m_position.abEffect = true;
+                m_effects.AfterburnerFlame.Play();
+            }
+            else
+            {
+                m_position.abEffect = false;
+                m_effects.AfterburnerFlame.Clear();
+                m_effects.AfterburnerFlame.Pause();
+            } 
 
             //LATERAL LEFT RIGHT
             m_position.lateral.input = GetInputAxis(m_position.lateral.input, m_position.lateral.smooth, m_position.lateral.rightKey, m_position.lateral.leftKey);
@@ -330,11 +340,6 @@ namespace SimpleDroneController
                 return;
             }
 
-            if (m_effects.mainEngineFlame != null)
-            {
-                m_effects.mainEngineFlame.Play();
-            }
-
             if (m_effects.leftManeuveringEngineFlame != null)
             {
                 if (m_position.lateral.input < 0)
@@ -418,9 +423,19 @@ namespace SimpleDroneController
                 if (m_position.longitudinal.input < 0)
                 {
                     m_effects.reverseEngineFlame.Play();
+                    m_effects.mainEngineFlame.Pause();
+                    m_effects.mainEngineFlame.Clear();
+                }
+                else if (m_position.longitudinal.input > 0)
+                {
+                    m_effects.mainEngineFlame.Play();
+                    m_effects.reverseEngineFlame.Pause();
+                    m_effects.reverseEngineFlame.Clear();
                 }
                 else
                 {
+                    m_effects.mainEngineFlame.Pause();
+                    m_effects.mainEngineFlame.Clear();
                     m_effects.reverseEngineFlame.Pause();
                     m_effects.reverseEngineFlame.Clear();
                 }
