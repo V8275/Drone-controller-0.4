@@ -1,0 +1,34 @@
+EasyTurret Change Log
+
+1.1.2
+Fixed bug with non-rotator-aligned weapons and smooth motion.
+
+1.1.1
+Added support for gravity in any direction.
+
+1.1.0
+Added smooth motion option, with rotation and elevation acceleration parameters.
+Fixed Shared folder as it was in the wrong location in the heirarchy.
+Added 2 public method calls:
+     GetRotationToTargetAim() - Returns the goal rotation angle to the target aim point.
+     GetElevationToTargetAim() - Returns the goal elevation angle to the target aim point.
+Improved ballistic RangeCheck() on MF_DemoGun.
+
+1.0.3
+Changed default materials to materials that can be upgraded to URP materias.
+Added options to Demo_Projectile to use within collider checks and/or raycast checks.
+Cleaned up small turret model.
+Moved some items into a MobFarm shared folder to accomodate future asset package compatibility.
+
+1.0.2
+Added support for NavMeshAgent velocity.
+Will no longer try to gather velocity from kinematic rigidbodies.
+
+1.0.1
+Added a new example scene and simple scripts showing SetTarget() and ITurretEvents usage.
+Fixed an alignment bug in the turret prefabs.
+Fixed bug in ITurretEvents not reporting target loss.
+Fixed Small Turret prefab.
+
+1.0.0
+Initial Release.

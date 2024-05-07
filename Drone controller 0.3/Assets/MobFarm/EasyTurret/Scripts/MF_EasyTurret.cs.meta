@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b99ac1aa9c64046bcb077f70d779bdff
+labels:
+- Ai
+- Aim
+- Auto
+- Ballistic
+- Gravity
+- Intercept
+- Script
+- Shoot
+- Turret
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

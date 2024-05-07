@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: af577c80c5aeb432dbd3203d78909e63
+labels:
+- Gun
+- Shoot
+- Weapon
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

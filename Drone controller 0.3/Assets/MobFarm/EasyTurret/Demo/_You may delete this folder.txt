@@ -1,0 +1,2 @@
+EasyTurret demo folder.
+This folder contains items for demo purposes. They are not needed for core turret functionality and may be deleted.
