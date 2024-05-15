@@ -125,7 +125,6 @@ namespace SimpleDroneController
             public ParticleSystem bottomAltitudeEngineFlame;
             public ParticleSystem topAltitudeEngineFlame;
             public ParticleSystem reverseEngineFlame;
-            public ParticleSystem AfterburnerFlame;
         }
 
         [SerializeField] bool isOn = true;
@@ -178,17 +177,8 @@ namespace SimpleDroneController
                 return;
             }
 
-            if (Input.GetKey(m_position.AfterburnerKey) && m_position.longitudinal.input > 0)
-            {
-                m_position.abEffect = true;
-                m_effects.AfterburnerFlame.Play();
-            }
-            else
-            {
-                m_position.abEffect = false;
-                m_effects.AfterburnerFlame.Clear();
-                m_effects.AfterburnerFlame.Pause();
-            } 
+            if (Input.GetKey(m_position.AfterburnerKey)) m_position.abEffect = true;
+            else m_position.abEffect = false;
 
             //LATERAL LEFT RIGHT
             m_position.lateral.input = GetInputAxis(m_position.lateral.input, m_position.lateral.smooth, m_position.lateral.rightKey, m_position.lateral.leftKey);
@@ -340,9 +330,14 @@ namespace SimpleDroneController
                 return;
             }
 
+            if (m_effects.mainEngineFlame != null)
+            {
+                m_effects.mainEngineFlame.Play();
+            }
+
             if (m_effects.leftManeuveringEngineFlame != null)
             {
-                if (m_rotation.yaw.input < 0)
+                if (m_position.lateral.input < 0)
                 {
                     m_effects.leftManeuveringEngineFlame.Play();
                 }
@@ -355,7 +350,7 @@ namespace SimpleDroneController
 
             if (m_effects.rightManeuveringEngineFlame != null)
             {
-                if (m_rotation.yaw.input > 0)
+                if (m_position.lateral.input > 0)
                 {
                     m_effects.rightManeuveringEngineFlame.Play();
                 }
@@ -368,7 +363,7 @@ namespace SimpleDroneController
 
             if (m_effects.leftLateralEngineFlame != null)
             {
-                if (m_position.lateral.input < 0)
+                if (m_position.longitudinal.input < 0)
                 {
                     m_effects.leftLateralEngineFlame.Play();
                 }
@@ -381,7 +376,7 @@ namespace SimpleDroneController
 
             if (m_effects.rightLateralEngineFlame != null)
             {
-                if (m_position.lateral.input > 0)
+                if (m_position.longitudinal.input > 0)
                 {
                     m_effects.rightLateralEngineFlame.Play();
                 }
@@ -418,24 +413,14 @@ namespace SimpleDroneController
                 }
             }
 
-            if (m_effects.reverseEngineFlame != null && m_effects.mainEngineFlame != null)
+            if (m_effects.reverseEngineFlame != null)
             {
                 if (m_position.longitudinal.input < 0)
                 {
                     m_effects.reverseEngineFlame.Play();
-                    m_effects.mainEngineFlame.Pause();
-                    m_effects.mainEngineFlame.Clear();
                 }
-                else if (m_position.longitudinal.input > 0)
+                else
                 {
-                    m_effects.mainEngineFlame.Play();
-                    m_effects.reverseEngineFlame.Pause();
-                    m_effects.reverseEngineFlame.Clear();
-                }
-                else if(m_position.longitudinal.input == 0)
-                {
-                    m_effects.mainEngineFlame.Pause();
-                    m_effects.mainEngineFlame.Clear();
                     m_effects.reverseEngineFlame.Pause();
                     m_effects.reverseEngineFlame.Clear();
                 }
