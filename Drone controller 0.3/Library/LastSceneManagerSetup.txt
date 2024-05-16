@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Asteroids/Scenes/Asteroid Demo Scene Dark.unity
+- path: Assets/SimpleDroneController/Scenes/SDC_Demo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
